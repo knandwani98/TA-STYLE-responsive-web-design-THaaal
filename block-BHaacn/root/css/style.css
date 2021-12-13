@@ -69,7 +69,6 @@ table {
     color: #F9234D !important;
 }
 
-
 html {
     font-size: 10px;
 }
@@ -89,10 +88,8 @@ a {
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 3.2rem;
 }
-
-
-
 
 /* FLEX */
 
@@ -104,12 +101,21 @@ a {
     justify-content: center;
     align-items: center;
 }
+
 .justify-btwn {
     justify-content: space-between;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 .item-center {
     align-items: center;
+}
+
+.flex-col{
+    flex-direction: column;
 }
 
 .flex60 {
@@ -159,12 +165,13 @@ a {
     padding: 2rem 0;
 }
 
-.padbtm0 {
-    padding-bottom: 0 !important;
-}
 .padright0 {
     padding-right: 0 !important;
 }
+.padleft0 {
+    padding-left: 0 !important;
+}
+
 
 
 /* WIDTH */
@@ -247,7 +254,7 @@ p {
 }
 
 .header .logo {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 800;
     color: white;
 }
@@ -256,6 +263,9 @@ p {
     color: white;
     text-transform: uppercase;
     font-size: 1.9rem;
+}
+.manu a:hover {
+    color: var(--primary);
 }
 
 .menu li {
@@ -272,8 +282,7 @@ p {
 .banner {
     background: linear-gradient(rgba(53,37,171,0.8), rgba(53,37,171,0.8)), url(../media/banner.png) no-repeat center;
     background-size: cover;
-    height: 100vh;
-    position: relative;
+    width: 100vw;
     color: white;
 }
 
@@ -327,35 +336,36 @@ p {
 
 /* SCHEDULE */
 
-.schedule time {
-    display: inline-block;
-    margin-left: 4rem;
-    border-radius: 50%;
-    width: 12rem;
-    height: 12rem;
-    border: 2px dashed var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    line-height: 1;
-    color: var(--primary);
-    font-weight: 800;
-}
 
-.schedule time.active {
+.schedule .date.active {
     background-color: var(--primary);
     color: white;
 }
 
-.schedule img {
-    border-radius: 6px;
+.schedule time {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 800;
 }
 
-.schedule .line {
+.schedule .date {
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    margin: 0 auto;
+    color: var(--primary);
+    border: 2px dashed var(--primary);
+}
+
+.line {
     padding: 3rem 0;
-    border-left: 2px dashed var(--primary);
-    margin-left: 10rem;
+    border: 1px dashed var(--primary);
+    width: 0;
+    margin: 0 auto;
+}
+
+.schedule img {
+    border-radius: 6px;
 }
 
 .download {
@@ -378,7 +388,7 @@ p {
     background-color: var(--primary);
 }
 
-.active h3, .active h4 {
+.active h3, .active h5 {
     color: white;
 }
 
@@ -400,6 +410,7 @@ p {
     color: var(--primary);
     font-size: 3.6rem;
 }
+
 
 /* NEWS */
 
@@ -429,6 +440,11 @@ p {
 .footer a {
     color: #BCC0D2 !important;
     color: var(--txt);
+    font-size: 2rem;
+}
+
+.footer-menu a{
+    padding: 0 1rem;
 }
 
 .footer-nav {
@@ -456,6 +472,116 @@ p {
 .footer .copyright {
     background-color: var(--footer);
     color: #BCC0D2 !important;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 500;
+}
+
+
+@media screen and (min-width: 769px) {
+    .dnone {
+        display: none;
+    }    
+}
+
+@media screen and (max-width: 768px) {
+
+    html {
+        font-size: 8px;
+    }
+
+    .container {
+        max-width: 568px;
+        padding: 0 2.2rem;
+    }
+        
+    .mobi-flex {
+        flex: 0 1 100%;
+        margin: 2.4rem 0;
+    }
+    
+    .mabot0 {
+        margin-bottom: -2rem !important;
+    }
+
+    .wrap {
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+
+
+    /* Header */
+
+    .header .menu {
+        display: none;
+    }
+
+    /* Banner */
+
+    .banner .txt {
+        order: 1;
+    }
+
+    .banner.space120 {
+        padding-bottom: 6rem;
+    }
+
+    /* Video */
+
+    .video {
+        padding: 4rem 0;
+    }
+    .play-btn a {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: white;
+        color: var(--primary);
+        font-size: 2.4rem;
+    }
+
+
+
+    /* Footer */
+
+    .footer-nav {
+        text-align: center;
+    }
+    
+    .footer-nav .mobi-flex {
+        margin: 0.5rem 0;
+    } 
+
+    .footer .logo img{
+        width: 50%;
+    }
+
+    .footer .social a {
+        margin: 0 2.2rem;
+    }
+        .social .flex {
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}
+
+
+@media screen and (max-width: 376px) {
+
+
+    html {
+        font-size: 7px;
+    }
+
+    .container {
+        max-width: 276px;
+        padding: 0 1.2rem;
+    }
+    
+    
 }
